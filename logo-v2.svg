@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 52" fill="none" role="img" aria-label="ManiG — Strategic Program Management">
+  <title>ManiG</title>
+  <style>
+    .initial-m { fill: #F0F4FF; }
+    .initial-m-dark { fill: #080D1A; }
+    .rule { stroke: rgba(59,123,246,0.4); }
+    .sub { fill: #7A8BA8; }
+  </style>
+
+  <!-- Large "MG" initials -->
+  <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="initial-m">M</text>
+  <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
+
+  <!-- Thin vertical divider -->
+  <rect x="70" y="4" width="1" height="36" rx="0.5" class="rule"/>
+
+  <!-- Stacked right-side wordmark -->
+  <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="initial-m">MANI</text>
+  <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="sub">PROGRAM MGT</text>
+
+  <!-- Gold accent rule under MG -->
+  <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
+</svg>

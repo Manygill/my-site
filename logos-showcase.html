@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logo Showcase — ManiG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0F1520;
+      color: #F0F4FF;
+      padding: 48px 40px;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7A8BA8;
+      margin-bottom: 40px;
+    }
+    .logo-section {
+      margin-bottom: 56px;
+    }
+    .logo-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #3B7BF6;
+      margin-bottom: 20px;
+    }
+    .variants {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 800px;
+    }
+    .swatch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .swatch-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .dark-bg  { background: #080D1A; }
+    .dark-mid { background: #0E1525; }
+    .light-bg { background: #FFFFFF; }
+    .light-soft { background: #F3F4F8; }
+
+    .dark-bg  .swatch-label,
+    .dark-mid .swatch-label { color: #F0F4FF; }
+    .light-bg .swatch-label,
+    .light-soft .swatch-label { color: #080D1A; }
+
+    /* ── Logo V1 inline SVG styles ── */
+    .dark-bg  .v1-text, .dark-mid .v1-text  { fill: #F0F4FF; }
+    .light-bg .v1-text, .light-soft .v1-text { fill: #080D1A; }
+
+    /* ── Logo V2 inline SVG styles ── */
+    .dark-bg  .v2-m, .dark-mid .v2-m  { fill: #F0F4FF; }
+    .light-bg .v2-m, .light-soft .v2-m { fill: #080D1A; }
+
+    .dark-bg  .v2-sub, .dark-mid .v2-sub  { fill: #7A8BA8; }
+    .light-bg .v2-sub, .light-soft .v2-sub { fill: #6B7A90; }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #1E2D44;
+      margin: 56px 0;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Logo Showcase · ManiG</h1>
+
+  <!-- LOGO V1 -->
+  <div class="logo-section">
+    <h2>V1 — Mark + Wordmark</h2>
+    <div class="variants">
+
+      <div class="swatch dark-bg">
+        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.35)"/>
+          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
+          </text>
+        </svg>
+        <span class="swatch-label">Dark #080D1A</span>
+      </div>
+
+      <div class="swatch dark-mid">
+        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.35)"/>
+          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
+          </text>
+        </svg>
+        <span class="swatch-label">Surface #0E1525</span>
+      </div>
+
+      <div class="swatch light-bg">
+        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.25)"/>
+          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
+          </text>
+        </svg>
+        <span class="swatch-label">White #FFFFFF</span>
+      </div>
+
+      <div class="swatch light-soft">
+        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
+          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.25)"/>
+          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
+          </text>
+        </svg>
+        <span class="swatch-label">Light #F3F4F8</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- LOGO V2 -->
+  <div class="logo-section">
+    <h2>V2 — Typographic (no icon)</h2>
+    <div class="variants">
+
+      <div class="swatch dark-bg">
+        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
+          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
+          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
+          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
+          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
+          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
+          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
+        </svg>
+        <span class="swatch-label">Dark #080D1A</span>
+      </div>
+
+      <div class="swatch dark-mid">
+        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
+          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
+          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
+          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
+          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
+          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
+          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
+        </svg>
+        <span class="swatch-label">Surface #0E1525</span>
+      </div>
+
+      <div class="swatch light-bg">
+        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
+          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
+          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
+          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
+          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
+          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
+          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
+        </svg>
+        <span class="swatch-label">White #FFFFFF</span>
+      </div>
+
+      <div class="swatch light-soft">
+        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
+          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
+          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
+          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
+          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
+          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
+          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
+        </svg>
+        <span class="swatch-label">Light #F3F4F8</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

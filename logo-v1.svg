@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 44" fill="none" role="img" aria-label="ManiG — Strategic Program Management">
+  <title>ManiG</title>
+  <style>
+    .wm { fill: #F0F4FF; }
+    .wm-dark { fill: #080D1A; }
+  </style>
+
+  <!-- Mark: gantt-inspired roadmap icon -->
+  <!-- Bar 1 — full width (strategy layer) -->
+  <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
+  <!-- Bar 2 — shorter (execution layer) -->
+  <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
+  <!-- Bar 3 — medium (delivery layer) -->
+  <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
+  <!-- Gold delivery marker on bar 1 -->
+  <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+  <!-- Subtle vertical spine -->
+  <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.35)"/>
+
+  <!-- Wordmark -->
+  <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+    <tspan font-weight="600" class="wm">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
+  </text>
+</svg>
