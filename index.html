@@ -1,216 +1,2013 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Logo Showcase — ManiG</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategic Program Management | Enterprise-Grade Execution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #F8FFFE;
+      --surface:     #EEF9F7;
+      --card:        #FFFFFF;
+      --border:      #C8E8E4;
+      --accent:      #0D9488;
+      --accent-glow: rgba(13, 148, 136, 0.15);
+      --accent-dim:  #0F766E;
+      --accent-light:#14B8A6;
+      --text:        #0F2421;
+      --muted:       #4A7A74;
+      --subtle:      #A8CBC7;
+      --gold:        #2563EB;
+      --teal-hi:     #CCFBF1;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #0F1520;
-      color: #F0F4FF;
-      padding: 48px 40px;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
+
+
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      height: 72px;
+      background: rgba(248, 255, 254, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.45rem 1.2rem;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 6% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -160px; left: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(13,148,136,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #7A8BA8;
-      margin-bottom: 40px;
+      color: var(--accent);
+      margin-bottom: 2rem;
     }
-    .logo-section {
-      margin-bottom: 56px;
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--accent);
     }
-    .logo-section h2 {
+
+    .hero-headline {
       font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      font-weight: 400;
+      color: var(--muted);
+      max-width: 640px;
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(13,148,136,0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dim);
+      box-shadow: 0 6px 28px rgba(13,148,136,0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--text); }
+
+    .btn-ghost svg { transition: transform 0.2s; }
+    .btn-ghost:hover svg { transform: translateX(3px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .stat-value span { color: var(--accent); }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 6%; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #3B7BF6;
-      margin-bottom: 20px;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
-    .variants {
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px; height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--surface); }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .services-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5px;
+      border: 1px solid var(--border);
       border-radius: 8px;
       overflow: hidden;
-      max-width: 800px;
     }
-    .swatch {
+
+    .service-card {
+      background: var(--card);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.35s ease;
+    }
+
+    .service-card:hover { background: #E0F5F3; }
+    .service-card:hover::after { width: 100%; }
+
+    .service-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(13,148,136,0.2);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 32px;
-      flex-direction: column;
-      gap: 12px;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
     }
-    .swatch-label {
-      font-size: 0.7rem;
+
+    .service-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.5;
+      margin-bottom: 0.75rem;
+      color: var(--text);
     }
-    .dark-bg  { background: #080D1A; }
-    .dark-mid { background: #0E1525; }
-    .light-bg { background: #FFFFFF; }
-    .light-soft { background: #F3F4F8; }
 
-    .dark-bg  .swatch-label,
-    .dark-mid .swatch-label { color: #F0F4FF; }
-    .light-bg .swatch-label,
-    .light-soft .swatch-label { color: #080D1A; }
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
 
-    /* ── Logo V1 inline SVG styles ── */
-    .dark-bg  .v1-text, .dark-mid .v1-text  { fill: #F0F4FF; }
-    .light-bg .v1-text, .light-soft .v1-text { fill: #080D1A; }
+    .service-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.75;
+    }
 
-    /* ── Logo V2 inline SVG styles ── */
-    .dark-bg  .v2-m, .dark-mid .v2-m  { fill: #F0F4FF; }
-    .light-bg .v2-m, .light-soft .v2-m { fill: #080D1A; }
+    /* ── DIFFERENTIATORS ── */
+    #why {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
 
-    .dark-bg  .v2-sub, .dark-mid .v2-sub  { fill: #7A8BA8; }
-    .light-bg .v2-sub, .light-soft .v2-sub { fill: #6B7A90; }
+    @media (max-width: 860px) {
+      #why { grid-template-columns: 1fr; gap: 3rem; }
+    }
 
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .why-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+      min-width: 28px;
+    }
+
+    .why-content h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .why-content p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .why-visual {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-visual::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%);
+    }
+
+    .credential-block {
+      position: relative;
+      z-index: 1;
+    }
+
+    .credential-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .credential-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .credential-item:last-child { border-bottom: none; }
+
+    .credential-dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .credential-text {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── CTA SECTION ── */
+    #contact {
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-inner .section-label { justify-content: center; }
+    .cta-inner .section-label::before { display: none; }
+
+    .cta-inner .section-title { margin: 0.75rem auto 1.25rem; }
+
+    .cta-inner .section-sub {
+      margin: 0 auto 2.75rem;
+      max-width: 480px;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--subtle); }
+
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .form-field textarea { resize: vertical; min-height: 110px; }
+
+    .form-field select option { background: var(--card); }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(13,148,136,0.22);
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-dim);
+      box-shadow: 0 6px 28px rgba(13,148,136,0.35);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--subtle);
+      margin-top: 0.5rem;
+    }
+
+    .contact-direct {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 6%;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--subtle);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--subtle);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg); }
+
+    .exp-header { margin-bottom: 3.5rem; }
+
+    .exp-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 860px;
+      position: relative;
+    }
+
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), rgba(13,148,136,0.08));
+    }
+
+    .exp-item {
+      padding: 0 0 2.75rem 2.25rem;
+      position: relative;
+    }
+
+    .exp-item:last-child { padding-bottom: 0; }
+
+    .exp-dot {
+      position: absolute;
+      left: -4px; top: 8px;
+      width: 9px; height: 9px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .exp-item:first-child .exp-dot {
+      background: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+
+    .exp-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-company {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-tenure {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid rgba(13,148,136,0.15);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+    }
+
+    .exp-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.6em;
+      width: 4px; height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    /* ── CREDENTIALS SECTION ── */
+    #credentials { background: var(--surface); }
+
+    .cred-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 860px) { .cred-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .cred-grid { grid-template-columns: 1fr; } }
+
+    .cred-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .cred-panel-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    /* certifications */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cert-item { display: flex; flex-direction: column; gap: 0.2rem; }
+
+    .cert-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .cert-issuer {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* skills */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.3rem 0.65rem;
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* achievements */
+    .achieve-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .achieve-item {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .achieve-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(13,148,136,0.15);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+
+    .achieve-text {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .achieve-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── DIVIDER ── */
     .divider {
       width: 100%;
       height: 1px;
-      background: #1E2D44;
-      margin: 56px 0;
-      max-width: 800px;
+      background: var(--border);
+    }
+
+    /* ── WIDGETS ── */
+    #widgets-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    /* Launcher buttons stack */
+    #widget-launchers {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    #chat-panel {
+      width: 340px;
+      background: #FFFFFF;
+      border: 1px solid #C8E8E4;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(13,148,136,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      max-height: 480px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    #chat-panel.hidden {
+      opacity: 0;
+      transform: translateY(10px) scale(0.97);
+      pointer-events: none;
+    }
+
+    #chat-header {
+      background: #EEF9F7;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #C8E8E4;
+      flex-shrink: 0;
+    }
+
+    #chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #chat-avatar {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #0EA5A0, #3B82F6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    #chat-header-text { display: flex; flex-direction: column; }
+
+    #chat-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0F2421;
+      line-height: 1.2;
+    }
+
+    #chat-status {
+      font-size: 0.7rem;
+      color: #0EA5A0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    #chat-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #0EA5A0;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    #chat-close {
+      background: none;
+      border: none;
+      color: #4A7A74;
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+
+    #chat-close:hover { color: #0F2421; }
+
+    #chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 220px;
+      max-height: 300px;
+    }
+
+    #chat-messages::-webkit-scrollbar { width: 4px; }
+    #chat-messages::-webkit-scrollbar-track { background: transparent; }
+    #chat-messages::-webkit-scrollbar-thumb { background: #C8E8E4; border-radius: 2px; }
+
+    .chat-msg {
+      display: flex;
+      flex-direction: column;
+      max-width: 85%;
+    }
+
+    .chat-msg.user { align-self: flex-end; align-items: flex-end; }
+    .chat-msg.bot  { align-self: flex-start; }
+
+    .chat-bubble {
+      padding: 9px 13px;
+      border-radius: 12px;
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .chat-msg.user .chat-bubble {
+      background: #0EA5A0;
+      color: #fff;
+      border-bottom-right-radius: 3px;
+    }
+
+    .chat-msg.bot .chat-bubble {
+      background: #EEF9F7;
+      color: #0F2421;
+      border: 1px solid #C8E8E4;
+      border-bottom-left-radius: 3px;
+    }
+
+    /* typing indicator */
+    .typing-bubble {
+      background: #EEF9F7;
+      border: 1px solid #C8E8E4;
+      border-radius: 12px;
+      border-bottom-left-radius: 3px;
+      padding: 11px 14px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .typing-dot {
+      width: 7px;
+      height: 7px;
+      background: #4A7A74;
+      border-radius: 50%;
+      animation: bounce 1.2s ease-in-out infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+      30%           { transform: translateY(-5px); opacity: 1; }
+    }
+
+    #chat-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid #C8E8E4;
+      flex-shrink: 0;
+    }
+
+    #chat-input {
+      flex: 1;
+      background: #F8FFFE;
+      border: 1px solid #C8E8E4;
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: #0F2421;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    #chat-input::placeholder { color: #A8CBC7; }
+    #chat-input:focus { border-color: #0D9488; }
+
+    #chat-send {
+      background: #0EA5A0;
+      border: none;
+      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    #chat-send:hover { background: #0D8F8A; }
+    #chat-send:active { transform: scale(0.95); }
+    #chat-send:disabled { background: #C8E8E4; cursor: not-allowed; }
+
+    /* Shared trigger button styles */
+    .widget-trigger {
+      border: none;
+      border-radius: 28px;
+      padding: 11px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    #chat-trigger {
+      background: #0EA5A0;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(13,148,136,0.3);
+    }
+
+    #chat-trigger:hover {
+      background: #0D8F8A;
+      box-shadow: 0 6px 28px rgba(13,148,136,0.45);
+      transform: translateY(-1px);
+    }
+
+    #proposal-trigger {
+      background: #1E3A5F;
+      color: #93C5FD;
+      border: 1px solid #2563EB;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.25);
+    }
+
+    #proposal-trigger:hover {
+      background: #1E3A5F;
+      border-color: #3B82F6;
+      box-shadow: 0 6px 28px rgba(37,99,235,0.4);
+      transform: translateY(-1px);
+    }
+
+    /* ── PROPOSAL WIDGET ── */
+    #proposal-panel {
+      width: 340px;
+      background: #FFFFFF;
+      border: 1px solid #BFDBFE;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(37,99,235,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      max-height: 520px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    #proposal-panel.hidden {
+      opacity: 0;
+      transform: translateY(10px) scale(0.97);
+      pointer-events: none;
+    }
+
+    #proposal-header {
+      background: #EFF6FF;
+      padding: 13px 16px 0;
+      border-bottom: 1px solid #BFDBFE;
+      flex-shrink: 0;
+    }
+
+    #proposal-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    #proposal-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #proposal-avatar {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1D4ED8, #2563EB);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    #proposal-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #1E3A5F;
+      letter-spacing: 0.01em;
+    }
+
+    #proposal-step-label {
+      font-size: 0.7rem;
+      color: #3B82F6;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    #proposal-close {
+      background: none;
+      border: none;
+      color: #93C5FD;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    #proposal-close:hover { color: #1E3A5F; }
+
+    /* Progress bar */
+    #proposal-progress-track {
+      height: 3px;
+      background: #BFDBFE;
+      border-radius: 0;
+      overflow: hidden;
+      margin: 0 -16px;
+    }
+
+    #proposal-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #1D4ED8, #3B82F6);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    #proposal-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 240px;
+      max-height: 320px;
+    }
+
+    #proposal-messages::-webkit-scrollbar { width: 4px; }
+    #proposal-messages::-webkit-scrollbar-track { background: transparent; }
+    #proposal-messages::-webkit-scrollbar-thumb { background: #BFDBFE; border-radius: 2px; }
+
+    /* Proposal bubbles reuse .chat-msg / .chat-bubble but override colors */
+    #proposal-messages .chat-msg.user .chat-bubble {
+      background: #1D4ED8;
+      color: #fff;
+      border-bottom-right-radius: 3px;
+    }
+
+    #proposal-messages .chat-msg.bot .chat-bubble {
+      background: #EFF6FF;
+      color: #1E3A5F;
+      border: 1px solid #BFDBFE;
+      border-bottom-left-radius: 3px;
+    }
+
+    #proposal-messages .typing-bubble {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+    }
+
+    #proposal-messages .typing-dot { background: #93C5FD; }
+
+    #proposal-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid #BFDBFE;
+      flex-shrink: 0;
+    }
+
+    #proposal-input {
+      flex: 1;
+      background: #F8FBFF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: #1E3A5F;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #proposal-input::placeholder { color: #93C5FD; }
+    #proposal-input:focus { border-color: #3B82F6; }
+    #proposal-input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    #proposal-send {
+      background: #1D4ED8;
+      border: none;
+      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    #proposal-send:hover { background: #1E40AF; }
+    #proposal-send:active { transform: scale(0.95); }
+    #proposal-send:disabled { background: #BFDBFE; cursor: not-allowed; }
+
+    @media (max-width: 640px) {
+      #widgets-container { bottom: 16px; right: 16px; }
+      #chat-panel, #proposal-panel { width: calc(100vw - 32px); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 5%; }
+      .nav-links { display: none; }
+      #hero { padding: 100px 5% 60px; }
+      section { padding: 70px 5%; }
+      .hero-stats { gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-  <h1>Logo Showcase · ManiG</h1>
 
-  <!-- LOGO V1 -->
-  <div class="logo-section">
-    <h2>V1 — Mark + Wordmark</h2>
-    <div class="variants">
+  <!-- NAV -->
 
-      <div class="swatch dark-bg">
-        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
-          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.35)"/>
-          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
-            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
-          </text>
-        </svg>
-        <span class="swatch-label">Dark #080D1A</span>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero" aria-label="ManiG — Strategic Program Management">
+      <svg viewBox="0 0 168 44" fill="none" height="30" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#0D9488"/>
+        <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#0D9488"/>
+        <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#0D9488"/>
+        <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+        <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(13,148,136,0.25)"/>
+        <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+          <tspan font-weight="600" fill="var(--text)">Mani</tspan><tspan font-weight="700" fill="#0D9488">G</tspan>
+        </text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Me</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Let's Talk</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Strategic Program Management</div>
+      <h1 class="hero-headline">
+        Your vision is clear.<br />
+        <em>Execution</em> is where it gets done.
+      </h1>
+      <p class="hero-sub">
+        I help organizations close the gap between strategy and delivery — building the roadmaps, systems, and cross-functional alignment that turn ambitious goals into measurable outcomes.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contact">Start a Conversation</a>
+        <a class="btn-ghost" href="#services">
+          See how I work
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-value">10<span>+</span></div>
+          <div class="stat-label">Years delivering at scale</div>
+        </div>
+        <div>
+          <div class="stat-value">AI<span>-</span>First</div>
+          <div class="stat-label">Powered programs & solutions</div>
+        </div>
+        <div>
+          <div class="stat-value">4</div>
+          <div class="stat-label">Ways to engage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header">
+      <div>
+        <div class="section-label">What I Offer</div>
+        <h2 class="section-title">Four ways to work together</h2>
+        <p class="section-sub">Whether you need a trusted advisor, an embedded leader, or structured training — there's an engagement model built for where you are.</p>
+      </div>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+          </svg>
+        </div>
+        <div class="service-name">Consulting</div>
+        <p class="service-desc">Expert diagnosis and strategic direction for teams navigating complex programs, process breakdowns, or scaling challenges. I come in, assess the situation, and give you a clear path forward.</p>
+        <span class="service-tag">Strategy &amp; Advisory</span>
       </div>
 
-      <div class="swatch dark-mid">
-        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
-          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.35)"/>
-          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
-            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
-          </text>
-        </svg>
-        <span class="swatch-label">Surface #0E1525</span>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <div class="service-name">Fractional PM</div>
+        <p class="service-desc">Senior program management leadership embedded in your team — without the full-time overhead. Ideal for growing companies that need enterprise-caliber execution right now.</p>
+        <span class="service-tag">Embedded Leadership</span>
       </div>
 
-      <div class="swatch light-bg">
-        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
-          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.25)"/>
-          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
-            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
-          </text>
-        </svg>
-        <span class="swatch-label">White #FFFFFF</span>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+        <div class="service-name">Coaching</div>
+        <p class="service-desc">One-on-one development for project managers and operations leaders who want to sharpen their strategic thinking, stakeholder management, and delivery discipline.</p>
+        <span class="service-tag">1:1 Development</span>
       </div>
 
-      <div class="swatch light-soft">
-        <svg viewBox="0 0 168 44" fill="none" height="40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#3B7BF6"/>
-          <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
-          <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(59,123,246,0.25)"/>
-          <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
-            <tspan font-weight="600" class="v1-text">Mani</tspan><tspan font-weight="700" fill="#3B7BF6">G</tspan>
-          </text>
-        </svg>
-        <span class="swatch-label">Light #F3F4F8</span>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/>
+          </svg>
+        </div>
+        <div class="service-name">Workshops</div>
+        <p class="service-desc">Structured, hands-on sessions that equip teams with the frameworks and tools to improve how they plan, prioritize, and execute — built around your actual work, not generic theory.</p>
+        <span class="service-tag">Team Training</span>
       </div>
 
     </div>
-  </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" style="padding: 100px 6%;">
+    <div>
+      <div class="section-label">Why Work With Me</div>
+      <h2 class="section-title">Enterprise experience.<br />Available at every scale.</h2>
+      <div class="why-list">
+
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div class="why-content">
+            <h3>You get enterprise-caliber leadership — regardless of your size</h3>
+            <p>I've led AI-powered and enterprise-scale programs that most practitioners never touch. Small businesses and startups access that same standard of execution, without needing to hire a team to get it.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div class="why-content">
+            <h3>I translate vision into roadmaps that actually get executed</h3>
+            <p>Strategy without execution is just a slide deck. My work lives at the intersection — turning business intent into actionable plans, clear ownership, and measurable delivery.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div class="why-content">
+            <h3>I operate across functions, not just within them</h3>
+            <p>Cross-functional complexity is where programs typically break down. I've spent over a decade building alignment across stakeholders, teams, and competing priorities — and making it hold.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="why-visual">
+      <div class="credential-block">
+        <div class="credential-title">Background &amp; Expertise</div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">10+ years in program &amp; project management</div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">Led AI-powered enterprise-scale programs</div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">Expertise in process optimization &amp; solution design</div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">Stakeholder engagement across all levels</div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">Proven in fast-paced, high-stakes environments</div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <div class="credential-text">Serves startups, SMBs, and enterprise teams</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div class="divider"></div>
 
-  <!-- LOGO V2 -->
-  <div class="logo-section">
-    <h2>V2 — Typographic (no icon)</h2>
-    <div class="variants">
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="exp-header">
+      <div class="section-label">Work Experience</div>
+      <h2 class="section-title">Where I've delivered</h2>
+      <p class="section-sub">A decade-plus of leading complex programs across enterprise, AI, and public sector.</p>
+    </div>
 
-      <div class="swatch dark-bg">
-        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
-          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
-          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
-          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
-          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
-          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
-          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
-        </svg>
-        <span class="swatch-label">Dark #080D1A</span>
+    <div class="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-company">T-Mobile</span>
+          <span class="exp-tenure">2025 – Present</span>
+        </div>
+        <div class="exp-title">Sr. Project Manager</div>
+        <ul class="exp-bullets">
+          <li>Led delivery of enterprise and AI-driven initiatives including API Marketplace and ServiceNow programs.</li>
+          <li>Managed Agile ceremonies, workback schedules, and executive reporting across Jira and Confluence.</li>
+        </ul>
       </div>
 
-      <div class="swatch dark-mid">
-        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
-          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
-          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
-          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
-          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
-          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
-          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
-        </svg>
-        <span class="swatch-label">Surface #0E1525</span>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-company">Microsoft</span>
+          <span class="exp-tenure">2017 – 2025</span>
+        </div>
+        <div class="exp-title">Sr. Consultant / PM</div>
+        <ul class="exp-bullets">
+          <li>Delivered 12+ enterprise cloud and AI initiatives, improving cross-team productivity and accelerating feature delivery by 25% through structured Agile &amp; SDLC governance.</li>
+          <li>Implemented Microsoft Copilot for Dynamics 365, improving agent productivity and reducing manual case-handling time by 30%.</li>
+        </ul>
       </div>
 
-      <div class="swatch light-bg">
-        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
-          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
-          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
-          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
-          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
-          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
-          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
-        </svg>
-        <span class="swatch-label">White #FFFFFF</span>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-company">Microsoft</span>
+          <span class="exp-tenure">2014 – 2025</span>
+        </div>
+        <div class="exp-title">Scrum Master</div>
+        <ul class="exp-bullets">
+          <li>Optimized workflows across Azure DevOps, shortening sprint cycle time by 15% and improving backlog predictability and work item accuracy.</li>
+          <li>Led cross-functional delivery across engineering, finance, security, and operations for enterprise ERP, CRM, and AI integrations serving 5,000+ global users.</li>
+        </ul>
       </div>
 
-      <div class="swatch light-soft">
-        <svg viewBox="0 0 148 52" fill="none" height="44" xmlns="http://www.w3.org/2000/svg">
-          <text x="4" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" class="v2-m">M</text>
-          <text x="35" y="38" font-family="'Space Grotesk', sans-serif" font-size="40" font-weight="700" letter-spacing="-2" fill="#3B7BF6">G</text>
-          <rect x="70" y="4" width="1" height="36" rx="0.5" fill="rgba(59,123,246,0.4)"/>
-          <text x="80" y="22" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em" class="v2-m">MANI</text>
-          <text x="80" y="38" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.12em" class="v2-sub">PROGRAM MGT</text>
-          <rect x="4" y="43" width="28" height="2" rx="1" fill="#C9A84C"/>
-        </svg>
-        <span class="swatch-label">Light #F3F4F8</span>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-company">City of Seattle</span>
+          <span class="exp-tenure">2016 – 2017</span>
+        </div>
+        <div class="exp-title">Tech PM</div>
+        <ul class="exp-bullets">
+          <li>Managed PeopleSoft upgrade program as Deputy Project Manager; developed project timeline, scope, WBS, and key milestone tracking.</li>
+          <li>Delivered scope within budget and timeline while managing risks, issues, and communications.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-company">HTC Corporation</span>
+          <span class="exp-tenure">2015</span>
+        </div>
+        <div class="exp-title">Project Manager</div>
+        <ul class="exp-bullets">
+          <li>Delivered end-to-end SAP Hybris + Dynamics CRM integration, increasing e-commerce conversion reliability and reducing order-processing errors by 35%.</li>
+          <li>Executed successful data migration and system integration, reducing manual reconciliation effort by 30%.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-meta">
+          <span class="exp-company">Verizon Wireless</span>
+          <span class="exp-tenure">2010 – 2014</span>
+        </div>
+        <div class="exp-title">Project Manager / Developer</div>
+        <ul class="exp-bullets">
+          <li>Managed CRM and e-commerce programs supporting online &amp; in-store retail operations serving 10M+ customers, improving order accuracy by 28%.</li>
+          <li>Designed and delivered custom CRM entities, workflows, dashboards, and reports that reduced agent handling time by 22%.</li>
+        </ul>
       </div>
 
     </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials">
+    <div class="section-label">Credentials &amp; Skills</div>
+    <h2 class="section-title">Certifications, expertise &amp; impact</h2>
+
+    <div class="cred-grid">
+
+      <!-- Certifications -->
+      <div class="cred-panel">
+        <div class="cred-panel-label">Certifications</div>
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-name">Certified Scrum Master (CSM)</span>
+            <span class="cert-issuer">Scrum Alliance · Member #000398758</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Six Sigma Black Belt</span>
+            <span class="cert-issuer">Process &amp; Continuous Improvement</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Change Management Foundations</span>
+            <span class="cert-issuer">PMI · Certification Complete</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">PMI Member</span>
+            <span class="cert-issuer">Project Management Institute</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="cred-panel">
+        <div class="cred-panel-label">Core Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Program &amp; Product Management</span>
+          <span class="skill-tag">Agile / Scrum</span>
+          <span class="skill-tag">Process &amp; Solution Design</span>
+          <span class="skill-tag">Impact Assessment</span>
+          <span class="skill-tag">Comparative Analysis</span>
+          <span class="skill-tag">Stakeholder Mediation</span>
+          <span class="skill-tag">AI/ML Integrations</span>
+          <span class="skill-tag">Microsoft Copilot</span>
+          <span class="skill-tag">UX Design</span>
+          <span class="skill-tag">Business Strategy</span>
+          <span class="skill-tag">Data-Driven Decision Making</span>
+          <span class="skill-tag">Microsoft Enterprise Platforms</span>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="cred-panel">
+        <div class="cred-panel-label">Key Achievements</div>
+        <div class="achieve-list">
+          <div class="achieve-item">
+            <div class="achieve-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <span class="achieve-text"><strong>$52.9M enterprise portfolio</strong> — 10+ concurrent projects, 32+ FTEs and vendors, overlapping timelines and complex dependencies.</span>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <span class="achieve-text"><strong>AI-powered automation</strong> via Microsoft Copilot, Power Platform, and Dynamics 365 — measurable reduction in manual processes and improved support efficiency.</span>
+          </div>
+          <div class="achieve-item">
+            <div class="achieve-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="achieve-text"><strong>~25% reduction in post-release defects</strong> through structured SDLC governance and quality practices.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="cta-inner">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Let's talk about what you're building</h2>
+      <p class="section-sub">Whether you have a specific engagement in mind or just want to explore what's possible — reach out. I'll respond within one business day.</p>
+
+      <form class="cta-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Jane Smith" />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="jane@company.com" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="org">Organization</label>
+          <input type="text" id="org" placeholder="Company or team name" />
+        </div>
+        <div class="form-field">
+          <label for="service">I'm interested in</label>
+          <select id="service">
+            <option value="" disabled selected>Select a service</option>
+            <option>Consulting</option>
+            <option>Fractional PM</option>
+            <option>Coaching</option>
+            <option>Workshop</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">What are you working on?</label>
+          <textarea id="message" placeholder="Briefly describe your situation or what you're trying to solve..."></textarea>
+        </div>
+        <button class="btn-submit" type="submit">Send Message</button>
+        <p class="form-note">No spam. No sales sequence. Just a real conversation.</p>
+        <div class="contact-direct">
+          <a href="mailto:mani@truvs.com" class="contact-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            mani@truvs.com
+          </a>
+          <a href="tel:4252874853" class="contact-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            425-287-4853
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="footer-logo" href="#hero" aria-label="ManiG">
+      <svg viewBox="0 0 168 44" fill="none" height="24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="9"  width="27" height="3.5" rx="1.75" fill="#0D9488"/>
+        <rect x="4" y="18" width="17" height="3.5" rx="1.75" fill="#0D9488"/>
+        <rect x="4" y="27" width="22" height="3.5" rx="1.75" fill="#0D9488"/>
+        <circle cx="35" cy="10.75" r="4" fill="#C9A84C"/>
+        <rect x="4" y="9" width="1.5" height="21.5" rx="0.75" fill="rgba(13,148,136,0.25)"/>
+        <text x="52" y="32" font-family="'Space Grotesk', sans-serif" font-size="23" letter-spacing="-0.5">
+          <tspan font-weight="600" fill="var(--text)">Mani</tspan><tspan font-weight="700" fill="#0D9488">G</tspan>
+        </text>
+      </svg>
+    </a>
+    <span class="footer-copy">&copy; 2026 · Strategic Program Management</span>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </footer>
+
+
+  <!-- WIDGETS -->
+  <div id="widgets-container">
+
+    <!-- Chat Panel -->
+    <div id="chat-panel" class="hidden">
+      <div id="chat-header">
+        <div id="chat-header-info">
+          <div id="chat-avatar">M</div>
+          <div id="chat-header-text">
+            <span id="chat-title">Ask Mani's Assistant</span>
+            <span id="chat-status">Online</span>
+          </div>
+        </div>
+        <button id="chat-close" aria-label="Close chat">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div id="chat-messages">
+        <div class="chat-msg bot">
+          <div class="chat-bubble">Hey! I'm Mani's assistant. Ask me anything about his services, experience, or how to work together.</div>
+        </div>
+      </div>
+      <div id="chat-input-row">
+        <input id="chat-input" type="text" placeholder="Type a message…" autocomplete="off" maxlength="500" />
+        <button id="chat-send" aria-label="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Proposal Panel -->
+    <div id="proposal-panel" class="hidden">
+      <div id="proposal-header">
+        <div id="proposal-header-top">
+          <div id="proposal-header-info">
+            <div id="proposal-avatar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div>
+              <div id="proposal-title">Get a Proposal</div>
+              <div id="proposal-step-label">Step 1 of 6</div>
+            </div>
+          </div>
+          <button id="proposal-close" aria-label="Close proposal">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div id="proposal-progress-track">
+          <div id="proposal-progress-fill"></div>
+        </div>
+      </div>
+      <div id="proposal-messages"></div>
+      <div id="proposal-input-row">
+        <input id="proposal-input" type="text" placeholder="Type your answer…" autocomplete="off" maxlength="500" />
+        <button id="proposal-send" aria-label="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Launcher buttons -->
+    <div id="widget-launchers">
+      <button id="proposal-trigger" class="widget-trigger" aria-label="Get a proposal">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Get Proposal
+      </button>
+      <button id="chat-trigger" class="widget-trigger" aria-label="Open chat">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Ask me anything
+      </button>
+    </div>
+
   </div>
+
+  <script>
+  (function () {
+    // ─── Shared helpers ───────────────────────────────────────────
+    const launchers = document.getElementById('widget-launchers');
+
+    function showLaunchers() { launchers.style.display = ''; }
+    function hideLaunchers() { launchers.style.display = 'none'; }
+
+    function makeTypingEl(id) {
+      const wrap = document.createElement('div');
+      wrap.className = 'chat-msg bot';
+      wrap.id = id;
+      wrap.innerHTML = '<div class="typing-bubble"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';
+      return wrap;
+    }
+
+    function appendMsg(container, role, text) {
+      const wrap   = document.createElement('div');
+      wrap.className = 'chat-msg ' + role;
+      const bubble = document.createElement('div');
+      bubble.className = 'chat-bubble';
+      bubble.textContent = text;
+      wrap.appendChild(bubble);
+      container.appendChild(wrap);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    async function callAPI(messages) {
+      if (location.protocol === 'file:') throw new Error('file-protocol');
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages })
+      });
+      if (!res.ok) { const t = await res.text(); throw new Error(t); }
+      return res.json();
+    }
+
+    // ─── WIDGET 1 — Q&A Chat ──────────────────────────────────────
+    const chatPanel   = document.getElementById('chat-panel');
+    const chatTrigger = document.getElementById('chat-trigger');
+    const chatClose   = document.getElementById('chat-close');
+    const chatInput   = document.getElementById('chat-input');
+    const chatSend    = document.getElementById('chat-send');
+    const chatMsgs    = document.getElementById('chat-messages');
+    const chatHistory = [];
+
+    chatTrigger.addEventListener('click', () => {
+      chatPanel.classList.remove('hidden');
+      hideLaunchers();
+      chatInput.focus();
+    });
+
+    chatClose.addEventListener('click', () => {
+      chatPanel.classList.add('hidden');
+      showLaunchers();
+    });
+
+    async function sendChat() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      chatInput.value = '';
+      appendMsg(chatMsgs, 'user', text);
+      chatHistory.push({ role: 'user', content: text });
+
+      chatSend.disabled = chatInput.disabled = true;
+      const typingEl = makeTypingEl('chat-typing');
+      chatMsgs.appendChild(typingEl);
+      chatMsgs.scrollTop = chatMsgs.scrollHeight;
+
+      try {
+        const data = await callAPI(chatHistory);
+        typingEl.remove();
+        const reply = data.reply || "I'd suggest reaching out — mani@truvs.com";
+        appendMsg(chatMsgs, 'bot', reply);
+        chatHistory.push({ role: 'assistant', content: reply });
+      } catch (err) {
+        console.error('Chat error:', err);
+        typingEl.remove();
+        const msg = err.message === 'file-protocol'
+          ? "Run 'node server.js' in my-site/ and open http://localhost:3000"
+          : "Something went wrong — email mani@truvs.com directly.";
+        appendMsg(chatMsgs, 'bot', msg);
+      } finally {
+        chatSend.disabled = chatInput.disabled = false;
+        chatInput.focus();
+      }
+    }
+
+    chatSend.addEventListener('click', sendChat);
+    chatInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); } });
+
+    // ─── WIDGET 2 — Proposal Intake ───────────────────────────────
+    const propPanel    = document.getElementById('proposal-panel');
+    const propTrigger  = document.getElementById('proposal-trigger');
+    const propClose    = document.getElementById('proposal-close');
+    const propInput    = document.getElementById('proposal-input');
+    const propSend     = document.getElementById('proposal-send');
+    const propMsgs     = document.getElementById('proposal-messages');
+    const propStepLbl  = document.getElementById('proposal-step-label');
+    const propFill     = document.getElementById('proposal-progress-fill');
+    const propHistory  = [];
+    let propStarted    = false;
+    let propComplete   = false;
+
+    function setProgress(step) {
+      const pct = Math.round((step / 6) * 100);
+      propFill.style.width = pct + '%';
+      propStepLbl.textContent = step < 6 ? `Step ${step} of 6` : propComplete ? 'Complete' : 'Step 6 of 6';
+    }
+
+    propTrigger.addEventListener('click', () => {
+      propPanel.classList.remove('hidden');
+      hideLaunchers();
+      if (!propStarted) {
+        propStarted = true;
+        kickoffIntake();
+      } else {
+        propInput.focus();
+      }
+    });
+
+    propClose.addEventListener('click', () => {
+      propPanel.classList.add('hidden');
+      showLaunchers();
+    });
+
+    async function kickoffIntake() {
+      const trigger = "I'd like to get a proposal.";
+      appendMsg(propMsgs, 'user', trigger);
+      propHistory.push({ role: 'user', content: trigger });
+      await fetchProposalReply();
+    }
+
+    async function fetchProposalReply() {
+      propSend.disabled = propInput.disabled = true;
+      const typingEl = makeTypingEl('prop-typing');
+      propMsgs.appendChild(typingEl);
+      propMsgs.scrollTop = propMsgs.scrollHeight;
+
+      try {
+        const data = await callAPI(propHistory);
+        typingEl.remove();
+
+        const reply = data.reply || "Something went wrong — email mani@truvs.com.";
+        appendMsg(propMsgs, 'bot', reply);
+        propHistory.push({ role: 'assistant', content: reply });
+
+        if (data.intake_step) setProgress(data.intake_step);
+
+        if (data.intake_complete) {
+          propComplete = true;
+          setProgress(6);
+          propInput.disabled = true;
+          propSend.disabled  = true;
+          propInput.placeholder = 'Proposal request received!';
+          // Fire generate-proposal stub
+          fetch('/api/generate-proposal', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ intake_data: data.intake_data, history: propHistory })
+          }).catch(console.error);
+        } else {
+          propSend.disabled = propInput.disabled = false;
+          propInput.focus();
+        }
+      } catch (err) {
+        console.error('Proposal error:', err);
+        typingEl.remove();
+        const msg = err.message === 'file-protocol'
+          ? "Run 'node server.js' in my-site/ and open http://localhost:3000"
+          : "Something went wrong — email mani@truvs.com directly.";
+        appendMsg(propMsgs, 'bot', msg);
+        propSend.disabled = propInput.disabled = false;
+        propInput.focus();
+      }
+    }
+
+    async function sendProposal() {
+      if (propComplete) return;
+      const text = propInput.value.trim();
+      if (!text) return;
+      propInput.value = '';
+      appendMsg(propMsgs, 'user', text);
+      propHistory.push({ role: 'user', content: text });
+      await fetchProposalReply();
+    }
+
+    propSend.addEventListener('click', sendProposal);
+    propInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendProposal(); } });
+
+  })();
+  </script>
 
 </body>
 </html>
